@@ -7,20 +7,20 @@
      <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,900&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Speech Recognition in Pythoon</title>
-    
+    <link rel="stylesheet" href="{{url_for('static',filename='styles/index.css')}}">
 </head>
 <body>
     <div id = "speechContainer">
         <h1>Upload new File</h1>
         <form method="POST" enctype="multipart/form-data">
             <input type="file" name="file">
-            <input type="submit" value="Transcribe">
+            <input type="submit" id="submitButton" value="Transcribe">
         </form>
     </div>
     {% if transcript != "" %}
     <div id="speechTranscriptContainer">
         <h1>Transcript</h1>
-        <p>{{transcript}}</p>
+        <p id="speechText">{{transcript}}</p>
     </div>
     {% else %}
     <div id="speechTranscriptContainer">
